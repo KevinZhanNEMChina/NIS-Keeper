@@ -7,20 +7,27 @@ This is a Linux shell script. There are two basic functions<br>
 The NIS server must be adjust before you use this script<br>
 Here is an example of how to setup a new node if you don't know.(if you already have a NIS setup up before please carefully move your NIS code to /opt/nem, make sure you can see nix.runNis.sh under the /opt/nem folder)<br>
 1、You must have a "nem" user,Running any user application in root account is considered not safe.<br>
-Command:<br>
-adduser nem<br>
+```Shell
+adduser nem
+```
 2、move or download your NIS node file to /opt/nem<br>
-mkdir /opt<br>
-wget https://bob.nem.ninja/nis-0.6.95.tgz<br>
-tar zxvf nis-0.6.95.tgz<br>
-mv package nem<br>
-chown -R nem:nem /opt/nem<br>
+```Shell
+cd /opt
+wget https://bob.nem.ninja/nis-0.6.95.tgz
+tar zxvf nis-0.6.95.tgz
+mv package nem
+chown -R nem:nem /opt/nem
+```
 4、download the script and mv this script to /usr/nemscript<br>
 3、set crontab for periodicity check for example every 10 minutes<br>
-crontab -e<br>
+```Shell
+crontab -e
+```
 */10 * * * * root /usr/nemscript/monitor_worldwide.sh >> /tmp/monitor.log 2>&1<br>
 4、supernode user please move servant program to /opt/nem/servant and set crontab for periodicity check<br>
-crontab -e<br>
+```Shell
+crontab -e
+```
 */8 * * * * /usr/nemscript/servant-autorun.sh<br>
 5、after 10 minites please refer to /tmp/monitor.log to see if NIS and script work fine<br>
 WARNING:this program will not guarantee anything, for example mistakenly remove or restart NEM supernode process, witch may influence your supernode reward. and some people believe it is not a good idea for everybody to use the same script on the mainnet since there should be some diversity in case or avoiding hack. So try this and give me feed back if you have any question using it.<br>
