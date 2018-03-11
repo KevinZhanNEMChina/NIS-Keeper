@@ -1,4 +1,4 @@
-# NIS-Keeper
+# NIS-Keeper (中文版在后面）
 Although NEM Infrastructure Service is robust, your node will sometime run into unsync status on NEM network. <br>
 NEM has provided a great web based API that I, a Linux sysadmin can easily call for.<br>
 This is a Linux shell script. There are two basic functions<br>
