@@ -22,12 +22,20 @@ chown -R nem:nem /opt/nem
 3、set crontab for periodicity check for example every 10 minutes<br>
 ```Shell
 crontab -e
+i
+*/10 * * * * root /usr/nemscript/monitor_worldwide.sh >> /tmp/monitor.log 2>&1
+press Esc
+press :wq Enter
+(the way you use vim)
 ```
-*/10 * * * * root /usr/nemscript/monitor_worldwide.sh >> /tmp/monitor.log 2>&1<br>
 4、supernode user please move servant program to /opt/nem/servant and set crontab for periodicity check<br>
 ```Shell
 crontab -e
+i
+*/8 * * * * /usr/nemscript/servant-autorun.sh
+press Esc
+press :wq Enter
+(the way you use vim)
 ```
-*/8 * * * * /usr/nemscript/servant-autorun.sh<br>
 5、after 10 minites please refer to /tmp/monitor.log to see if NIS and script work fine<br>
 WARNING:this program will not guarantee anything, for example mistakenly remove or restart NEM supernode process, witch may influence your supernode reward. and some people believe it is not a good idea for everybody to use the same script on the mainnet since there should be some diversity in case or avoiding hack. So try this and give me feed back if you have any question using it.<br>
