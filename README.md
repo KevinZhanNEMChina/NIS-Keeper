@@ -54,7 +54,6 @@ WARNING：this program will not guarantee anything, for example mistakenly remov
 So try this and give me feed back if you have any question using it.<br>
 If you think this script works feel free to donate:<br>
 NEM main net address: NC3ZL4L32GJXNGGD3HNIU5WHBKXFN557CKEXDVYV <br>
-NEM主网地址：NC3ZL4L32GJXNGGD3HNIU5WHBKXFN557CKEXDVYV <br>
 # NIS守护者
 即便NEM区块链基础设施程序已经很强健了，有时我们的节点还是会进入与NEM大网不同步的状态<br>
 NEM提供了很棒的基于web的API，我作为一个Linux系管也可以轻易调用起来<br>
