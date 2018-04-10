@@ -42,9 +42,9 @@ else
           if [[ $TIME_DELTA -gt 14400 ]]; then
                   killall -u nem
                   cd /tmp
-                  DB_FILE_NAME=$(curl -s https://bob.nem.ninja/|grep .db|grep -Po 'nis5_mainnet.(h2-)[0-9]+k.db.zip'|sort|tail -n1)
+                  DB_FILE_NAME=$(curl -s -k -4 https://bob.nem.ninja/|grep .db|grep -Po 'nis5_mainnet.(h2-)[0-9]+k.db.zip'|sort|tail -n1)
                   echo "`date` Downloading DB from Worldwide...."
-                  wget https://bob.nem.ninja/$DB_FILE_NAME -qO db.zip
+                  wget --no-check-certificate -4 https://bob.nem.ninja/$DB_FILE_NAME -qO db.zip
                   echo "`date` removing old database"
                   rm -rf /home/nem/nem/nis/data/*
                   echo "`date` unziping new database"
